@@ -11,7 +11,7 @@ namespace AnimalShelter.Models
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Destination>()
+            builder.Entity<Animal>()
                 .HasData(
                   new Animal { AnimalId = 1, Name = "Chives", Species = "Cat", Age = 3, Gender = "Male" },
                   new Animal { AnimalId = 2, Name = "Rigatoni", Species = "Cat", Age = 4, Gender = "Male" },
@@ -22,10 +22,10 @@ namespace AnimalShelter.Models
                   new Animal { AnimalId = 7, Name = "Trashcan", Species = "Dog", Age = 5, Gender = "Male" },
                   new Animal { AnimalId = 8, Name = "Toast", Species = "Cat", Age = 10, Gender = "Male" },
                   new Animal { AnimalId = 9, Name = "Strahd", Species = "Cat", Age = 100, Gender = "Male" },
-                  new Animal { AnimalId = 10, Name = "Ted", Species = "Dog", Age = 5, Gender = "Male" },
+                  new Animal { AnimalId = 10, Name = "Ted", Species = "Dog", Age = 5, Gender = "Male" }
                 );
-        }
-
-        public DbSet<Animal> Animals { get; set; }
     }
-}                
+
+    public DbSet<Animal> Animals { get; set; }
+  }
+}               
