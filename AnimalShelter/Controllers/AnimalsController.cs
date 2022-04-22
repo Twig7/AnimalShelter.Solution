@@ -11,19 +11,19 @@ namespace AnimalShelter.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
-  public class DestinationsController : ControllerBase
+  public class AnimalsController : ControllerBase
   {AnimalShelterContext _db;
-    public DestinationsController(AnimalShelterContext db)
+    public AnimalsController(AnimalShelterContext db)
     {
       _db = db;
     }
     
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Destination>>> Get(string species, string gender, string name, int minAge)
+    public async Task<ActionResult<IEnumerable<Animal>>> Get(string species, string gender, string name, int minAge)
     {
-      // var query = _db.Destinations.AsQueryable();
+      // var query = _db.Animals.AsQueryable();
 
-      IQueryable<Destination> query = _db.Animals.AsQueryable();
+      IQueryable<Animal> query = _db.Animals.AsQueryable();
 
       if(species != null)
       {
@@ -119,7 +119,7 @@ namespace AnimalShelter.Controllers
         
     private bool AnimalExists (int id)
     {
-      return _db.DeAnimals.Any(e => e.AnimalId == id);
+      return _db.Animals.Any(e => e.AnimalId == id);
     }
   }
 }
