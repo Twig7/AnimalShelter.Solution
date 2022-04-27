@@ -27,6 +27,36 @@ This is a C# and .NET API that lets you manage the cats and dogs available at an
 - Head back into the program you're running the code with, and run the command dotnet build in the terminal.
 - Now run the command dotnet run, and select localhost:5000 to interact with the schema via Swagger!
 
+## API Documentation with Postman
+
+- You can also use Postman or your browser to view and explore the API endpoints!
+
+### Endpoints
+
+Base URL: http://localhost:5001
+
+HTTP Request structure
+
+- GET /api/Animals
+- POST /api/Animals
+- GET /api/Animals/{id}
+- PUT /api/Animals/{id}
+- DELETE /api/Animals/{id}
+
+Example query
+
+- https://localhost:5001/api/animals/3
+
+Example response
+
+- {
+  "animalId": 3,
+  "name": "Honeybun",
+  "species": "Cat",
+  "age": "1 year",
+  "gender": "Female"
+  }
+
 ## Known Bugs
 
 - None
